@@ -2,6 +2,12 @@
 # Finamax - .gitignore
 # =======================================================
 
+# Firebase configuration and credentials
+lib/firebase_options.dart
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+*.env
+
 # 1. Binarios y compilados
 build/
 **/build/
@@ -24,7 +30,6 @@ app.*.map.json
 # 3. Credenciales y secretos locales sensibles
 .env
 .env.*
-*.env
 local.properties
 **/local.properties
 key.properties

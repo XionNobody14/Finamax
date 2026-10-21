@@ -44,38 +44,38 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyDH0ApuRvDfWtQeC7ik4yyCxZ2VDCNFYC0',
-    appId: '1:486506269027:web:3e422651b1dbb3d5bd6b56',
-    messagingSenderId: '486506269027',
-    projectId: 'fnmax-e6a2b',
-    authDomain: 'fnmax-e6a2b.firebaseapp.com',
-    storageBucket: 'fnmax-e6a2b.firebasestorage.app',
-    measurementId: 'G-ZJS4QKZF75',
+    apiKey: 'AIzaSy_YOUR_WEB_API_KEY_HERE',
+    appId: '1:000000000000:web:0000000000000000000000',
+    messagingSenderId: '000000000000',
+    projectId: 'your-project-id',
+    authDomain: 'your-project-id.firebaseapp.com',
+    storageBucket: 'your-project-id.firebasestorage.app',
+    measurementId: 'G-XXXXXXXXXX',
   );
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAt5PQmO79lc5aTDNOloBMxcYfFmne7-ls',
-    appId: '1:486506269027:android:fee2cb7a4190a001bd6b56',
-    messagingSenderId: '486506269027',
-    projectId: 'fnmax-e6a2b',
-    storageBucket: 'fnmax-e6a2b.firebasestorage.app',
+    apiKey: 'AIzaSy_YOUR_ANDROID_API_KEY_HERE',
+    appId: '1:000000000000:android:0000000000000000000000',
+    messagingSenderId: '000000000000',
+    projectId: 'your-project-id',
+    storageBucket: 'your-project-id.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBSdftrqdg_y5XBkvYICV7WpehoMS8SIKk',
-    appId: '1:486506269027:ios:f1880eb9b7bc12c9bd6b56',
-    messagingSenderId: '486506269027',
-    projectId: 'fnmax-e6a2b',
-    storageBucket: 'fnmax-e6a2b.firebasestorage.app',
+    apiKey: 'AIzaSy_YOUR_IOS_API_KEY_HERE',
+    appId: '1:000000000000:ios:0000000000000000000000',
+    messagingSenderId: '000000000000',
+    projectId: 'your-project-id',
+    storageBucket: 'your-project-id.firebasestorage.app',
     iosBundleId: 'com.finamax.app.finamax',
   );
 
   static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBSdftrqdg_y5XBkvYICV7WpehoMS8SIKk',
-    appId: '1:486506269027:ios:f1880eb9b7bc12c9bd6b56',
-    messagingSenderId: '486506269027',
-    projectId: 'fnmax-e6a2b',
-    storageBucket: 'fnmax-e6a2b.firebasestorage.app',
+    apiKey: 'AIzaSy_YOUR_MACOS_API_KEY_HERE',
+    appId: '1:000000000000:ios:0000000000000000000000',
+    messagingSenderId: '000000000000',
+    projectId: 'your-project-id',
+    storageBucket: 'your-project-id.firebasestorage.app',
     iosBundleId: 'com.finamax.app.finamax',
   );
 }
