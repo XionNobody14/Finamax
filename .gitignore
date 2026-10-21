@@ -1,0 +1,56 @@
+# =======================================================
+# Finamax - .gitignore
+# =======================================================
+
+# 1. Binarios y compilados
+build/
+**/build/
+*.apk
+*.aab
+*.lock
+app.*.symbols
+app.*.map.json
+/android/app/release
+
+# 2. Archivos temporales de Dart / Flutter
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+**/doc/api/
+**/ios/Flutter/.last_build_id
+
+# 3. Credenciales y secretos locales sensibles
+.env
+.env.*
+*.env
+local.properties
+**/local.properties
+key.properties
+**/key.properties
+*.keystore
+**/*.keystore
+*.jks
+**/*.jks
+
+# 4. Caché del IDE y editores
+.idea/
+.vscode/
+*.iml
+*.ipr
+*.iws
+
+# 5. Gradle y sistema operativo
+.gradle/
+**/.gradle/
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/

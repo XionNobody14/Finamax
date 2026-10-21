@@ -1,0 +1,71 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ===============================================================
+    // Assumed Data Model
+    // ===============================================================
+    //
+    // Collection: users/{userId}
+    // Document ID: userId (Firebase Auth UID)
+    // Fields:
+    //   - id: string (required) - UID del usuario
+    //   - email: string (required) - Correo electrónico
+    //   - name: string (required) - Nombre del usuario
+    //   - currency: string (optional) - Divisa ('MXN', 'USD', 'EUR')
+    //   - incomeType: string (optional) - 'quincenal' | 'mensual'
+    //   - incomeAmount: number (required) - Monto de ingreso periódico
+    //   - nextPayDate: string (required) - Próxima fecha de pago
+    //   - createdAt: string (required) - Fecha de creación del registro
+    //
+    // Subcollections under users/{userId}:
+    //   1. expenses/{expenseId}:
+    //      - id: string (required)
+    //      - userId: string (required, coincide con userId)
+    //      - title: string (required)
+    //      - amount: number (required)
+    //      - category: string (required)
+    //      - date: string (required)
+    //      - periodicity: string (required)
+    //      - paymentMethod: string (required)
+    //      - creditCardId: string (optional)
+    //
+    //   2. credit_cards/{cardId}:
+    //      - id: string (required)
+    //      - userId: string (required, coincide con userId)
+    //      - bankName: string (required)
+    //      - cardName: string (required)
+    //      - colorHex: string (required)
+    //      - cutOffDay: number (required)
+    //      - paymentDueDay: number (required)
+    //      - creditLimit: number (required)
+    //      - currentBalance: number (required)
+    //
+    //   3. savings_goals/{goalId}:
+    //      - id: string (required)
+    //      - userId: string (required, coincide con userId)
+    //      - title: string (required)
+    //      - targetAmount: number (required)
+    //      - currentAmount: number (required)
+    //      - targetDate: string (required)
+    //      - colorHex: string (required)
+    //
+    // ===============================================================
+
+    // Denegación por defecto: cualquier otra colección no definida queda denegada
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Colección raíz: perfil de usuario en 'users/{userId}'
+    match /users/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Subcolecciones recursivas ('expenses', 'credit_cards', 'savings_goals') bajo 'users/{userId}'
+    match /users/{userId}/{document=**} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+    }
+  }
+}
