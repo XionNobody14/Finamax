@@ -7,10 +7,14 @@ lib/firebase_options.dart
 android/app/google-services.json
 ios/Runner/GoogleService-Info.plist
 *.env
+*.env.local
+*.env.*
 
 # 1. Binarios y compilados
 build/
 **/build/
+dist/
+**/dist/
 *.apk
 *.aab
 *.lock
@@ -18,7 +22,7 @@ app.*.symbols
 app.*.map.json
 /android/app/release
 
-# 2. Archivos temporales de Dart / Flutter
+# 2. Archivos temporales de Dart / Flutter y dependencias
 .dart_tool/
 .flutter-plugins
 .flutter-plugins-dependencies
@@ -26,10 +30,11 @@ app.*.map.json
 .pub/
 **/doc/api/
 **/ios/Flutter/.last_build_id
+node_modules/
+venv/
+.venv/
 
 # 3. Credenciales y secretos locales sensibles
-.env
-.env.*
 local.properties
 **/local.properties
 key.properties
